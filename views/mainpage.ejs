@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- For search button -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <!-- For map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+    <title>Main page</title>
+
+    <style>
+        body {
+          font-family: Arial;
+          background: rgb(56, 190, 231);
+        }
+        
+        * {
+          box-sizing: border-box;
+        }
+        
+        form.search input[type=text] {
+          padding: 10px;
+          font-size: 17px;
+          border: 1px solid grey;
+          float: left;
+          width: 80%;
+          background: #f1f1f1;
+        }
+        
+        form.search button {
+          float: left;
+          width: 20%;
+          padding: 10px;
+          background: #053257;
+          color: white;
+          font-size: 17px;
+          border: 1px solid grey;
+          border-left: none;
+          cursor: pointer;
+        }
+        
+        form.search button:hover {
+          background: #5898cc;
+        }
+        
+        form.search::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        </style>
+</head>
+
+<body>
+    <div style="margin-left: 20%; margin-right: 20%;">
+        
+        <h1 style="color:rgb(0, 0, 0)">Home</h1>
+    
+        <form class="search" action="/action_page.php">
+            
+            <input type="text" placeholder="Search for a POI" name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+
+        </form>
+
+        <br />       
+        <p>A map with all the POIs currently saved in our database. You can search for one using the search bar above then click it if you watnt to view all the information available, or register a visit </p>
+        <div style="height: 750px; width: 90;" id="mapid"></div>
+
+        <br />
+        <br />
+
+        <button type="submit" >Manage Profile</button>
+    </div>
+</body>
+
+
+<script>
+    // to documenation gia tous xartes einai edw:  https://leafletjs.com/examples/quick-start/
+
+    var layer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1IjoibGZrc2pmZGtsc2pmbGtzZGpmbGtzZGZqbGsiLCJhIjoiY2twZHZ2emJyMXJpOTJubnhoNXE3dGF5MiJ9.tFk1NMKkfjT7F-0OJ4Z-Sw'
+        // get access from here :https://api.mapbox.com
+    })
+
+
+    var map = L.map('mapid', {
+        selectedArea: true,
+        center: [38.245865, 21.732860],
+        zoom: 13,
+        layers: [layer]
+
+    })
+
+    //bazw ena tyxaio marker
+    // var userMarket = L.marker([37.968202, 21.732860]);
+    // userMarket.addTo(map)
+    
+
+    //fly to my location
+    getLocation(map);
+    function getLocation(map) {
+
+        function success(details) {
+            //lat
+            console.log("Test");
+            var lat = details.coords.latitude;
+            var lon = details.coords.longitude
+
+            console.log(details.coords.latitude, details.coords.longitude);
+            L.marker([lat, lon]).addTo(map);
+            map.flyTo([lat, lon]);
+
+        }
+        function error(error) {
+            console.log(error);
+        }
+
+        var options = {
+            timeout: 100000,
+            maximumAge: 0,
+
+        }
+
+        navigator.geolocation.getCurrentPosition(success, error, options);
+    }
+
+    //Ektupwse sth konsola tis syntetagmenes thw topo8esias mou
+    // var options = {
+    // enableHighAccuracy: true,
+    // timeout: 5000,
+    // maximumAge: 0
+    // };
+
+    // function success(pos) {
+    // var crd = pos.coords;
+
+    // console.log('Your current position is:');
+    // console.log(`Latitude : ${crd.latitude}`);
+    // console.log(`Longitude: ${crd.longitude}`);
+    // console.log(`More or less ${crd.accuracy} meters.`);
+    // }
+
+    // function error(err) {
+    // console.warn(`ERROR(${err.code}): ${err.message}`);
+    // }
+
+    // navigator.geolocation.getCurrentPosition(success, error, options);
+
+</script>
+
+</html>
