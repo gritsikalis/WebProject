@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="/public/css/forms.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>Update Profile</title>
+</head>
+
+
+<body>
+    <div class="card">
+    <div style="margin-left: 30%; margin-right: 30%;">
+        <div style="display: flex; justify-content: center; align-content: center; height: 100vh; flex-direction: column;">
+            <div>
+                
+                <h3>Change your Username and Password</h3>
+                    <label for="exampleInputUsername1" class="div-label">Old Username</label>
+                    <input class="form-control" id="exampleInputUsername1">
+                </div>
+
+                <br/>
+
+                <div class="mb-3">
+                    <label for="exampleInputNewUsername1" class="div-label">New Username</label>
+                    <input class="form-control" id="exampleInputNewUsername1">
+                </div>
+
+                <br/>
+
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Old Password</label>
+                    <input class="form-control" id="exampleInputPassword1">
+                </div>
+
+                <br/>
+                <div class="mb-3">
+                    <label for="exampleInputNewPassword1" class="form-label">New Password<span id='message'></span></label>
+                    <input class="form-control" id="exampleInputNewPassword1" onkeyup='check();'>
+                </div>
+
+                <br/>
+
+                <div class="mb-3">
+                    <label for="exampleInputConfNewPassword1" class="form-label">Confirm Password</label>
+                    <input class="form-control" id="exampleInputConfNewPassword1" onkeyup='check();'>
+                </div>
+                    <button onclick="updateprofile()" class="btn btn-primary" id=myBtn>Submit</button>
+                
+                    <div class= "mb-3">
+                        <label for="exampleInputUsername1" class="form-label">Your Username</label>
+                        <input class="form-control" id="exampleInputUsername1">
+                        <button onclick="istoriko()" class="btn btn-primary">Show History</button>
+                    </div>    
+
+            </div>
+        <button onclick="history.back()">Go Back</button>
+    </div>
+    
+</body>
+
+<script src="/public/Javascript/update_profilescript.js"></script>
+
+</html>

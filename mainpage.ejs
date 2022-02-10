@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- For search button -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <!-- For map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="/public/css/mainpage.css">
+
+    <title>Mainpage</title>
+
+</head>
+
+<body>
+    <div style="margin-left: 20%; margin-right: 20%;">
+        
+        <h1>Home</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#" onclick=goto_information()>Information</a></li>
+                <li><a href="#" onclick=goto_updateprofile()>Update profile</a></li>
+                <li><a href="#" onclick=Logout()>Logout</a></li>
+            </ul>
+        </nav>
+
+        <form class="search">
+            <input id="Searchfield" type="text" placeholder="Search for a POI" >
+            <button type="submit" onclick="SearchDatabase()"><i class="fa fa-search"></i></button>
+        </form>
+
+        <br />    
+
+        <p>A map with all the POIs currently saved in our database. You can search for one using the search bar above then click it if you watnt to view all the information available, or register a visit. </p>
+
+        <div style="height: 750px; width: 90;" id="map"></div>
+
+
+        <div>
+            <p>In case you've come in contact with other people we advise you to inform them and encourage them to also submit their case here if they test positive for Covid-19.</p>
+            <h4>Submit your case here:</h4>
+            <button onclick="goto_covidform()">Fill form</button>
+        </div>
+
+        <br><br><br><br><br><br>
+
+    </div>
+</body>
+
+<script src="/public/javascript/mainpagescript.js"></script>
+
+</html>
+
+
+

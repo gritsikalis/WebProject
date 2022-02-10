@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="/public/css/forms.css">
+
+
+    <title>Information</title>
+
+</head>
+
+<body>
+    <div class="card" style="margin-left: 30%; margin-right: 30%;">    
+        <div style="display: flex; justify-content: center; align-content: center; height: 100vh; flex-direction: column;">
+        
+            <div class="mb-3">
+                <label for="Username">Username</label><br>
+                <input type="text" id="Username">
+            </div>
+            <button class="showList" onclick="getpoisvisited()">See all pois visited</button>
+            <ul class="list"></ul>
+                
+            
+
+        <br><br><br><br>      
+        <button onclick="history.back()">Go Back</button>
+        </div>
+
+    </div>
+</body>
+
+<script src="/public/javascript/informationscript.js"></script>
+
+</html>

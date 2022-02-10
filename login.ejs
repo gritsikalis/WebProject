@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="/public/css/forms.css">
+    <title>Login</title>
+</head>
+
+
+<body>
+    <div class="card" style="margin-left: 30%; margin-right: 30%;">
+        
+        <div style="display: flex; justify-content: center; align-content: center; height: 100vh; flex-direction: column;">
+            <div>
+
+                <h3>Login using your Username and Password</h3>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="div-label">Username</label>
+                    <br/>
+                    <input class="form-control" id="exampleInputEmail1">
+                </div>
+
+                <br/>
+
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <br/>
+                    <input class="form-control" id="exampleInputPassword1">
+                </div>
+    
+                <button onclick="login()" class="btn btn-primary">Login</button>
+                <br/>
+
+                <P>Don't have an account?</P>
+                <a href="http://localhost:3000/register">Register</a>
+
+            </div>
+        </div>
+    
+    </div> 
+</body>
+
+
+<script src="/public/Javascript/loginscript.js"></script>
+
+</html>

@@ -1,0 +1,104 @@
+body {
+    font-family: Arial;
+    color: #000000;
+    background: rgb(56, 190, 231);
+}
+  
+* {
+    box-sizing: border-box;
+}
+  
+
+form.search button {
+    float: left;
+    width: 10%;
+    padding: 10px;
+    height: 50px;
+    background: #1040df;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    border-left: none;
+    cursor: pointer;
+}
+  
+form.search button:hover {
+    background: #5898cc;
+}
+  
+form.search::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+input{
+    border-radius: 15px;
+    border: 1px solid #b7b7b7;
+    padding: 5px 5px 5px 10px;
+    font-size: 18px;
+    transition: 0.5s;
+    width: 80%;
+    height: 50px;
+}
+input:focus{
+    outline: none;
+    border: 10px solid #1040df;
+}
+input::placeholder{
+    color: #bebebe;
+}
+
+button{
+    position: sticky;
+    align-self: center;
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin: 0px;
+    width: 140px;
+    height: 70px;
+    font-size: 15px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background: #1040df;
+}
+
+
+/* NAVBAR */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 5px;
+  overflow: hidden;
+  background-color: #1040df;
+  border-radius: 10px;
+  border: none;
+  
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+ /* menu */
+  
+
+

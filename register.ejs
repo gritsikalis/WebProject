@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    
+    <link rel="stylesheet" href="/public/css/forms.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>Register</title>
+    
+</head>
+
+<body>
+    <div class="card" style="margin-left: 30%; margin-right: 30%;">
+        
+        <div style="display: flex; justify-content: center; align-content: center; height: 100vh; flex-direction: column;">
+            <div>
+                <h3>Create your account</h3>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="div-label">Email address</label>
+                    <br/>
+                    <input class="form-control" id="exampleInputEmail1">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+
+                <br/>
+
+                <div class="mb-3">
+                    <label for="exampleInputUsername1" class="div-label">Username</label>
+                    <br/>
+                    <input class="form-control" id="exampleInputUsername1">
+                </div>
+
+                <br/>
+
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password  </label>
+                    <br/>
+                    <input class="form-control" id="exampleInputPassword1" onkeyup='check();'>
+                </div>
+
+                <br/>
+
+                <div class="mb-3">
+                    <label for="exampleInputConfPassword1" class="form-label">Confirm Password <span id='message'></span></label>
+                    <br/>
+                    <input  class="form-control" id="exampleInputConfPassword1" onkeyup='check();'>
+                </div>
+                
+                <button onclick="Registeruser()" class="btn btn-primary" id=myBtn>Submit</button>
+                <br />
+                <P>Already have an account?</P>
+                <a href="http://localhost:3000/login">Login</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="/public/Javascript/registerscript.js"></script>
+
+</html>
